@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  openldap:
+    image: adann0/openldap:armv7
+    env_file:
+      - openldap.env
+    tty: true
+    stdin_open: true
+    volumes:
+      - /path/to/openldap/ldap:/var/lib/ldap
+      - /path/to/openldap/slapd:/etc/ldap/slapd.d
+      - /path/to/ssl/openldap:/container/service/slapd/assets/certs/
+    ports:
+      - "389:389"
+      - "636:636"
+    domainname: "rev3.tk" # important: same as hostname
+    hostname: "ldap.rev3.tk"
+
+  phpldapadmin:
+    image: adann0/phpldapadmin:armv7
+    env_file:
+      - phpldapadmin.env
+    volumes:
+      - /path/to/ssl/openldap:/container/service/ldap-client/assets/certs
+      - /path/to/ssl/phpldapadmin:/container/service/phpldapadmin/assets/apache2/certs
+    ports:
+      - "6443:443"
+    depends_on:
+      - openldap
+
+  samba:
+    image: adann0/samba-ldap:armv7
+    environment:
+     - SAMBA_LDAP_PASSWORD=secret
+    ports:
+     - "445:445"
+     - "139:139"
+    volumes:
+     - /path/to/samba/libnss-ldap.conf:/etc/libnss-ldap.conf:ro
+     - /path/to/samba/smb.conf:/etc/samba/smb.conf:ro
+     - /mnt/data/media:/media
