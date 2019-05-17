@@ -1,11 +1,11 @@
-andrespp/samba-ldap
-===================
+adann0/samba-ldap:armv7
+=======================
 
 # Introduction
 
 Docker image for SAMBA with ldap authentication.
 
-This image is based on `andrespp/debian-ldap`.
+This image is based on `andrespp/samba-ldap`.
 
 # Quick start
 
