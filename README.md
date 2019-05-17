@@ -7,7 +7,7 @@ This image is based on `andrespp/samba-ldap` and `osixia/openldap`.
 
 # Quick start
 
-You can clone this repo, take a look here https://github.com/adann0/openldap-armv7 or here https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309 for how to generate SSL certificate, replace volumes path, passwords, domain... 
+You can clone this repo, take a look here https://github.com/adann0/openldap-armv7 or here https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309 for how to generate SSL certificate, replace volumes path in docker-compose.yml, passwords, domain... 
 
 	git clone https://github.com/adann0/samba-ldap-armv7.git &&
 	cd samba-ldap-armv7 &&
