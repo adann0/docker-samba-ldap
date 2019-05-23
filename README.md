@@ -18,7 +18,7 @@ You should connect at https://ip:6443 and create a Samba Group, with a Samba Use
 	$ docker exec -ti <samba_ldap_container> /bin/bash
 	# smbpasswd -a <user>
 	
-You change the password, verify if it's reported in LDAP via phpLDAPadmin and then retry to connect to Samba.
+Verify if the modification is reported in LDAP via phpLDAPadmin and then retry to connect to Samba.
 
 # ToDo :
 
