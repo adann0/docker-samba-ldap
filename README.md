@@ -1,6 +1,8 @@
 adann0/samba-ldap:armv7
 =======================
 
+** THIS REPO IS NO LONGER SUPPORTED. YOU SHOULD MAKE OUR OWN FOR SECURITY REASONS AND UPDATE ALL PACKAGES USED HERE. **
+
 Docker image for SAMBA with ldap authentication.
 
 This image is based on `andrespp/samba-ldap` and `osixia/openldap`.
